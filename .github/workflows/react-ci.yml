@@ -7,7 +7,7 @@ on:
     branches: ["master"]
 
 jobs:
-  build:
+  CI-CD:
     runs-on: self-hosted
 
     strategy:
@@ -15,11 +15,19 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Git checkout
+        uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn build --if-present
-      - run: yarn test
+
+      - name: Install packages
+        run: yarn
+
+      - name: Build application
+        run: yarn build --if-present
+
+      - name: Test application
+        run: yarn test
