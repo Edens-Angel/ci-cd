@@ -7,3 +7,9 @@ test("renders learn react link", () => {
   const linkElement = screen.getByText(/Demo github actions CI-CD/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test("test if the app exist", () => {
+  render(<App />);
+
+  expect(true).toReturn(true);
+});
