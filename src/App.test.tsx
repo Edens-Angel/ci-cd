@@ -11,5 +11,5 @@ test("renders learn react link", () => {
 test("test if the app exist", () => {
   render(<App />);
 
-  expect(true).toReturn(true);
+  expect(true).toBe(true);
 });
