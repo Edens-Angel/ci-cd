@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { FC } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 const App: FC = () => (
   <div className="App">
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="App-logo test_class" alt="logo" />
       <p>
         Edit <code>src/App.tsx</code> and save to reload.
       </p>
